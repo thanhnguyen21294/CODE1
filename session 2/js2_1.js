@@ -53,9 +53,12 @@
     
 // }
 // console.log(x);
-// tất cả các giá trị khai báo theo kiểu var sẽ được đưa lên đầu
+// tất cả các giá trị khai báo theo kiểu var (khai báo global) sẽ được đưa lên đầu
 
 // x = 100;
 // console.log(x);
 // var x;
-// let x; // xảy ra lỗi vì var sẽ lên trước
+// let x; 
+// let sẽ xảy ra lỗi vì khai báo sau khi khai báo giá trị còn var sẽ không bị lỗi 
+
+
