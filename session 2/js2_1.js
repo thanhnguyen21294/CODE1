@@ -1,7 +1,7 @@
 // let x = 'Hello World!'; 
 // let y = 100;
 
-// const pi = 3.14; // khai bao hang so pi
+// const pi = 3.14; // khai bao hang so pi , const là 1 số không thể thay đổi
 // let xinChao = 'Hello!';
 // let XinChao = 'HELLO!';
 
