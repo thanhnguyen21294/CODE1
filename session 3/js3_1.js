@@ -45,6 +45,23 @@
 // console.log(`Chào bạn ${name}, bạn ${age} tuổi`);
 
 
+// let bankinh = prompt("Nhap ban kinh hinh tron");
+// let bk = Number(bankinh);
+// const pi = 3.14;
+// let chuvi = 2 * pi * bk;
+// let dientich = pi * bk * bk;
+// console.log(`Chu vi hinh tron co ban kinh ${bk} la ${chuvi.toFixed(2)}`);
+// console.log(`Dien tich hinh tron co ban kinh ${bk} la ${dientich.toFixed(2)}`);
+
+
+// let chieudai = prompt("Nhap chieu dai cua hinh chu nhat");
+// let chieurong = prompt("Nhap chieu rong cua hinh chu nhat");
+// let dai = Number(chieudai);
+// let rong = Number(chieurong);
+// let chuvi = (dai + rong) * 2;
+// let dientich = dai * rong;
+// console.log(`Hinh chu nhat co chieu dai ${dai}, chieu rong ${rong}, 
+// co chu vi va dien tich la ${chuvi.toFixed(2)}, ${dientich,toFixed(2)}`);
 
 
 
