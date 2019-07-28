@@ -60,5 +60,3 @@
 //     password = prompt("Mat khau qua ngan, moi nhap lai")
 // }
 // console.log(password);
-
-
