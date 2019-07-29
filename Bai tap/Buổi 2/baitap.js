@@ -9,10 +9,33 @@
 
 
 // let N = prompt("Nhap mat khau");
-
-
-// while (N.length < 8) {
-//     N = prompt("Mat khau chua du 8 ky tu hoac chua co 1 trong 3 ky tu dac biet (%, $, _), yeu cau nhap lai");
+// while (N.length < 8 && (!N.includes('%') || !N.includes('&') || !N.includes('_'))) {
+//     N = prompt("Nhap lai");
 // }
 // console.log(N);
 
+
+// while (true) {
+//     let N = prompt("Nhap mat khau");
+//       if(N.length > 8 && (N.includes('%') || N.includes('&') || N.includes('_'))) 
+//           {console.log(N);
+//       break;}
+      
+//         let N = prompt("AYYYYY");
+//         break;
+      
+//   }
+  
+
+
+
+while (true) {
+    const pwd = prompt('Nhap mat khau');
+  
+    if ((pwd.length >= 8) && (pwd.includes('%') || pwd.includes('$') || pwd.includes('_'))) {
+        console.log(pwd);
+      break;
+    }
+   }
+  
+  
