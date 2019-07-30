@@ -20,6 +20,61 @@
 // }
 
 
+// let matkhau = prompt("Nhap mat khau");
+// while (matkhau.length < 8) {
+//     matkhau = prompt("Nhap lai mat khau");
+// }
+
+// let codauphantram = matkhau.includes("%");
+// let codauva = matkhau.includes("&");
+// let codaugachduoi = matkhau.includes("_");
+
+// while (codauphantram == false) {
+//     matkhau = prompt("mat khau phai co dau %, yeu cau nhap lai");
+//     codauphantram = matkhau.includes("%");
+// }
+
+// while (codauva == false) {
+//     matkhau = prompt("mat khau phai co dau &, yeu cau nhap lai");
+//     codauphantram = matkhau.includes("&");
+// }
+
+// while (codaugachduoi == false) {
+//     matkhau = prompt("mat khau phai co dau _, yeu cau nhap lai");
+//     codauphantram = matkhau.includes("_");
+// }
+
+
+// let a = Number(prompt("Nhap so a"));
+// let b = Number(prompt("Nhap so b"));
+// let hinhchunhat = "";
+// for (let x = 0; x < b; x++) {
+//     let row ="";
+//     for (let y = 0;  y < a; y++){
+//         row = row + "*";
+      
+//     }
+//     hinhchunhat = row + "\n";
+    
+// }
+// console.log(hinhchunhat);
+
+
+
+let a = Number(prompt("Nhap so a"));
+let row = "";
+for (let index = 0; index < a; index++) {
+    row = row + "*";
+    console.log(row);   
+}
+for (let index = 0; index < a-1; index++) {
+    row = row.slice(0, row.length - 1);
+    console.log(row);
+    
+    
+}
+
+    
 
 
 
