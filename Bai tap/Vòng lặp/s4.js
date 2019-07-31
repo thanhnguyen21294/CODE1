@@ -69,9 +69,21 @@
 // B8: Thực hiện tính tổng: S = 1/1+ 1/2+ 1/3+ ... + 1/N với N nhập từ bàn phím.
 // let N = Number(prompt("Nhap 1 so bat ky"));
 // let tong = 0;
-// for (let index = 1; index < N+1 ; index++) {
+// for (let index = 1; index < N + 1 ; index++) {
 //     tong = tong + 1/index;
     
 // }
 // console.log(tong);
 
+
+// B9: Thực hiện tính tổng: S = [1/(1*2)] + [1/(2*3)] + [1/(3*4)] + ... + [1/(N*(N+1))]
+// let N = Number(prompt("Nhap N"));
+// let tong = 0;
+// for (let index = 1; index < N+1; index++){
+//     tong = tong + (1/(index*(index+1)))
+  
+// }
+// console.log(tong);
+
+
+// B10: 
