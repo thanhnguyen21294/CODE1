@@ -87,3 +87,37 @@
 
 
 // B10: 
+
+
+
+// B13: Yêu cầu người dùng nhập mật khẩu, nếu mật khẩu ngắn hơn 8 ký tự, yêu cầu nhập lại.
+// let N = prompt("Nhap mat khau");
+// while (N.length < 8) {
+//     N = prompt("Mat khau chua du 8 ky tu, nhap lai")
+// }
+// console.log(N);
+
+
+// B14: Yêu cầu người dùng nhập mật khẩu, nếu mật khẩu ngắn hơn 8 ký tự, 
+//thông báo người mật khẩu quá ngắn và yêu cầu nhập lại.
+// let N = prompt("Nhap mat khau");
+// while (N.length < 8) {
+//     alert("Mat khau qua ngan, yeu cau nhap lai");
+//     N = prompt("Nhap lai mat khau");
+// }
+// console.log(N);
+
+
+// B15: Yêu cầu người dùng nhập mật khẩu chứa đồng thời 3 ký tự đặc biệt ($, %, _) 
+//và dài ít nhất 8 ký tự. Thiếu điều kiện nào, yêu cầu người dùng nhập lại.
+// while (true) {
+//     let N = prompt("Nhap mat khau");
+//     if ((N.length>8) && (N.includes("$") && N.includes("%") && N.includes("_"))) {
+//         console.log(N);
+//         break;
+//     }
+//     else{
+//         alert("Nhap lai");
+//     }
+// }
+
