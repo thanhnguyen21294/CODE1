@@ -49,17 +49,35 @@
 
 
 
-let a = Number(prompt("Nhap so a"));
-let b = Number(prompt("Nhap so b"));
-if (a != 0 ) {
-    console.log(`PT ax + b = 0 co a=${a}, b=${b} co nghiem duy nhat`);
+// let a = Number(prompt("Nhap so a"));
+// let b = Number(prompt("Nhap so b"));
+// if (a != 0 ) {
+//     console.log(`PT ax + b = 0 co a=${a}, b=${b} co nghiem duy nhat`);
     
-}
-else if (a == 0 && b!=0) {
-    console.log(`PT ax + b = 0 co a=${a}, b=${b} vo nghiem`);
+// }
+// else if (a == 0 && b!=0) {
+//     console.log(`PT ax + b = 0 co a=${a}, b=${b} vo nghiem`);
     
-}
-else {
-    console.log(`PT ax + b = 0 co a=${a}, b=${b} co vo so nghiem`);
+// }
+// else {
+//     console.log(`PT ax + b = 0 co a=${a}, b=${b} co vo so nghiem`);
     
-}
+// }
+
+
+// let a = Number(prompt("Nhap so a"));
+// let b = Number(prompt("Nhap so b"));
+// let c = Number(prompt("Nhap so c"));
+// let N = Number(b*b - 4*a*c);
+// let cb2 = Math.sqrt(N)
+// console.log(`a=${a}, b=${b}, c=${c}`);
+// if (N == 0) {
+//     console.log(`PT co nghiem kep x1 = x2 = ${(-b/a).toFixed(2)}`);
+// }
+//     else if (N > 0) {
+//         console.log(`PT co 2 nghiem phan biet x1 = ${((-b-cb2)/a).toFixed(2)} va x2 = ${((-b+cb2)/a).toFixed(2)}`);
+//     }   else{
+//             console.log(`PT vo nghiem`);
+            
+//         }
+
