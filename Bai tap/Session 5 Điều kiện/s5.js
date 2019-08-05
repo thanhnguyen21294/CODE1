@@ -79,24 +79,25 @@
 
 //B5: Nhập vào 3 số a, b, c. Kiểm tra xem 3 số đó có lập được thành tam giác không. 
 //Nếu có, kiểm tra xem tam giác có vuông, cân hay đều k?
-// let a = Number(prompt("Nhap 1 so"));
-// let b = Number(prompt("Nhap 1 so"));
-// let c = Number(prompt("Nhap 1 so"));
-// if ((a*a+b*b==c*c || a*a+c*c==b*b || b*b+c*c==a*a) && (a>0 && b>0 && c>0)) {
-//     console.log(`Tam giac nay la tam giac vuong`);
-    
-// }else if ( a>0 && b>0 && c>0 && a!==b && a!==c && b!==c && (((a+b)>c&&(a-b)<c) || ((a+c)>b&&(a-c)<b) || ((b+c)>a&&(b-c)<a||(c-b)<a))) {
+// let a = Number(prompt("Nhap canh a"));
+// let b = Number(prompt("Nhap canh b"));
+// let c = Number(prompt("Nhap canh c"));
+// if ( a>0 && b>0 && c>0 && a!==b && a!==c && b!==c && (((a+b)>c&&Math.abs(a-b)<c) || ((a+c)>b&&Math.abs(a-c)<b) || ((b+c)>a&&Math.abs(b-c)<a||Math.abs(c-b)<a))) {
 //     console.log(`Tam giac nay la tam giac thuong`);
     
-// }else if ((a==b || a==c || b==c) && (a>0 && b>0 && c>0) && (a!==b || a!==c || b!==c)) {
+// }else if ((a>0 && b>0 && c>0) &&(a*a+b*b==c*c || a*a+c*c==b*b || b*b+c*c==a*a) ) {
+//     console.log(`Tam giac nay la tam giac vuong`);
+    
+// }else if ((a>0 && b>0 && c>0) && (((a==b)&&(a+b)>c) || ((a==c)&&(a+c)>b) || ((b==c)&&(b+c)>a))) {
 //     console.log(`Tam giac nay la tam giac can`);
     
-// }else if ((a==b && b==c && a==c) && (a>0 && b>0 && c>0)) {
+// }else if ((a>0 && b>0 && c>0) && (a==b && b==c && a==c) ) {
 //     console.log(`Tam giac nay la tam giac deu`);
     
 // }else{
-//     alert("Khong lap duoc thanh tam giac");
+//     alert("Khong phai la 1 tam giac");
 // }
+
 
 
 
