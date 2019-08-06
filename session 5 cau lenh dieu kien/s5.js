@@ -81,3 +81,33 @@
             
 //         }
 
+
+// switch so sanh bien == gia tri
+// let month = Number(prompt("Nhap vao thang trong nam"));
+// switch (month) {
+//     case 1:
+//     case 3:
+//     case 5:
+//     case 7:
+//     case 8:
+//     case 10:
+//     case 12:
+//         console.log(`Co 31 ngay`);
+        
+//         break;
+//     case 2:
+//         console.log(`Co 28 hoac 29 ngay`);
+//         break;
+        
+//     case 4:
+//     case 6:
+//     case 9:
+//     case 11:
+//         console.log(`Co 30 ngay`);
+//         break;
+
+//     default:
+//         console.log(`Nhap sai thang roi`);
+        
+//         break;
+// }
