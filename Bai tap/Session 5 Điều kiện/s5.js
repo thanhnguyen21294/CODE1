@@ -134,3 +134,10 @@
 
 
 //B7: 
+let N = Number(prompt("Nhap 1 so bat ky"));
+if ((N>0) && (N%3 == 0 || N%3 == 1)) {
+    console.log(`${N} la so chinh phuong`);
+    
+}else if (condition) {
+    
+}
