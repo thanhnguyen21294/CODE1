@@ -84,38 +84,43 @@
 // console.log(array2);
 
 
-let menu = "Menu: \n"+
-            "1. Danh sách sách trong thư viện: \n"+
-            "2. Thêm sách: \n"+
-            "3. Đổi tên sách: \n"+
-            "4. Xoá sách: \n"+
-            "5. Thoát";
-while (true) {
-    console.log(menu);
-    let choose = Number(prompt("Chon Menu: "));
-    let exit = false;
-    switch (choose) {
-        case 1:
-            alert("1");
-            break;
-        case 2:
-            alert("2");
-             break;
-        case 3:
-            alert("3");
-            break;
-        case 4:
-            alert("4");
-            break;
-        case 5:
-            exit = true;
-            break;
-        
-        default:
-            alert("Nhap sai roi, nhap lai");
+// let menu = "Menu: \n"+
+//             "1. Danh sách sách trong thư viện: \n"+
+//             "2. Thêm sách: \n"+
+//             "3. Đổi tên sách: \n"+
+//             "4. Xoá sách: \n"+
+//             "5. Thoát";
+// while (true) {
+//     let thuvien = Number(prompt(menu));
+//     let thoat = false;
+//     switch (thuvien) {
+//         case 1:
+//             let n1 = prompt("Danh sách");
+//             break;
+//         case 2:
+//             let n2 = prompt("Thêm sách");
+//             console.log(n2);
             
-    }
-    if(exit){
-        true;
-    }
-}
+//             break;
+//         case 3:
+//             alert("Đổi tên sách");
+//             break;
+//         case 4:
+//             alert("Xóa sách");
+//             break;
+//         case 5:
+//             thoat = true;
+//             break;
+//         default:
+//             alert("Nhập sai, yêu cầu nhập lại");
+//     }
+//     if(thoat){
+//         break
+//     }
+// }
+// alert("Bạn đã thoát");
+
+
+
+
+
