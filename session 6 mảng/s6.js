@@ -84,41 +84,69 @@
 // console.log(array2);
 
 
-// let menu = "Menu: \n"+
-//             "1. Danh sách sách trong thư viện: \n"+
-//             "2. Thêm sách: \n"+
-//             "3. Đổi tên sách: \n"+
-//             "4. Xoá sách: \n"+
-//             "5. Thoát";
-// while (true) {
-//     let thuvien = Number(prompt(menu));
-//     let thoat = false;
-//     switch (thuvien) {
-//         case 1:
-//             let n1 = prompt("Danh sách");
-//             break;
-//         case 2:
-//             let n2 = prompt("Thêm sách");
-//             console.log(n2);
+let menu = "Menu: \n"+
+            "1. Danh sách sách trong thư viện: \n"+
+            "2. Thêm sách: \n"+
+            "3. Đổi tên sách: \n"+
+            "4. Xoá sách: \n"+
+            "5. Thoát";
+let danhsach = [];
+
+while (true) {
+    let thuvien = Number(prompt(menu));
+    let thoat = false;
+    switch (thuvien) {
+        case 1:
+            if (danhsach == 0) {
+                alert(`Danh sách rỗng`);
+            }else{
+                console.log("Danh sách:");
+                for (let index = 0; index < danhsach.length; index++) {
+                    const book = danhsach[index];
+                    console.log(`${index+1}: ${book}`);
+                }
+            }
+            break;
+        case 2:
+            let themsach = prompt("Thêm sách: ");
+            danhsach.push(themsach);
+            console.log(danhsach);
             
-//             break;
-//         case 3:
-//             alert("Đổi tên sách");
-//             break;
-//         case 4:
-//             alert("Xóa sách");
-//             break;
-//         case 5:
-//             thoat = true;
-//             break;
-//         default:
-//             alert("Nhập sai, yêu cầu nhập lại");
-//     }
-//     if(thoat){
-//         break
-//     }
-// }
-// alert("Bạn đã thoát");
+            
+            
+            break;
+        case 3:
+            let sttsach = Number(prompt("Chọn số thứ tự sách cần đổi"));
+            if (sttsach < 0 || sttsach > danhsach.length) {
+                alert(`Nhập lại`);
+            }else{
+                let tensachmoi = prompt("Nhập tên sách mới");
+                danhsach[sttsach - 1] = tensachmoi;
+            }
+            console.log(danhsach);
+            
+            break;
+        case 4:
+            let sttxoasach = Number(prompt("Nhập số thứ tự sách cần xoá"));
+            if (sttxoasach < 0 || sttxoasach > danhsach.length) {
+                alert(`Nhập lại`);
+            }else{  
+                danhsach.splice(sttxoasach -1 , 1);
+                alert("Xoá sách thành công");
+            }
+            break;
+        case 5:
+            thoat = true;
+            break;
+        default:
+            alert("Nhập sai, yêu cầu nhập lại");
+    }
+    if(thoat){
+        break
+    }
+}
+alert("Bạn đã thoát");
+console.log(danhsach);
 
 
 
