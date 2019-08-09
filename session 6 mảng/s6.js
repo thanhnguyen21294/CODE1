@@ -12,7 +12,7 @@
     
     
 // }
-// console.log(array1[0]);
+// console.log(array1[1]);
 
 //Them gia tri: ten bien.push(gia tri) : them gia tri vao cuoi mang
 //              ten bien.unshift(gia tri): them gia tri vao dau mang
