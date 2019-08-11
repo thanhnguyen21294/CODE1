@@ -9,6 +9,16 @@ let danhsachmonhoc = [];
 for (let index = 0; index < 3; index++) {
     let monhoc = prompt("Nhap mon hoc");
     danhsachmonhoc.push(monhoc);
-sinhvien.monhoc = danhsachmonhoc;   
+      
     
 }
+sinhvien.monhoc = danhsachmonhoc; 
+let danhsachKeys = "";
+for (const key in sinhvien) {
+    if (sinhvien.hasOwnProperty(key)) {
+        danhsachKeys += key + '\n';
+        
+        
+    }
+}
+console.log(danhsachKeys);
