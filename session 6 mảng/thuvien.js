@@ -39,7 +39,7 @@ let menu = "Menu: \n"+
             "1.Danh sach: \n"+
             "2.Them sach: \n"+
             "3.Gia ban: \n"+
-            "4.So luong: \n"+
+            // "4.So luong: \n"+
             "5.Sua sach: \n"+
             "6.Xoa sach: \n"+
             "7.Thoat!"
@@ -65,8 +65,13 @@ while (true) {
             if (themsach.length == 0) {
                 alert("Nhap lai");
             }else{
+                
+                
+                
                 danhsach.push(themsach);
                 console.log(danhsach);
+                
+                
             }
             break;
         
@@ -80,6 +85,8 @@ while (true) {
                     let giaban = Number(prompt("Nhap gia ban"));
                     danhsach[sttsachcanban - 1] = giaban;
                     console.log(`Sach ${sttsachcanban} co gia ${giaban.toLocaleString("fi-FI")} vnd`);
+                    // console.log(danhsach);
+                    
                 }else{
                     alert("Khong co sach ban dang tim");
                     
@@ -88,16 +95,16 @@ while (true) {
             }
             break;
         
-        case 4:
+        // case 4:
             
-            break;
+        //     break;
         
         case 5:
             let suasach = Number(prompt("Nhap so thu tu sach can sua"));
             if (suasach>0 && suasach<=danhsach.length) {
                 let tensachmoi = prompt("Nhap ten sach moi");
                 danhsach[suasach - 1] = tensachmoi;
-                console.log(danhsach);
+                
                 
             }else{
                 alert("Nhap lai");
@@ -108,7 +115,7 @@ while (true) {
             let xoasach = Number(prompt("Nhap so thu tu sach can xoa"));
             if (xoasach>0 && xoasach<=danhsach.length) {
                 danhsach.splice(xoasach - 1 , 1);
-                console.log(danhsach);
+                
                 
             }else {
                 alert("Nhap lai");

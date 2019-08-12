@@ -51,7 +51,7 @@ if (sinhvien.hasOwnProperty(capnhat)) {
 
 
 let lophoc = [];
-let masolop = Number(prompt("Ban hoc lop bao nhieu"));
+let masolop = Number(prompt("Ban hoc lop nao"));
 let tenlop = prompt("Nhap ten lop ban dang hoc");
 lophoc.masolop = masolop;
 lophoc.tenlop = tenlop;
@@ -69,3 +69,35 @@ sinhvien.hocthem = monhocthem;
 
 
 
+let diemtong = 0;
+let somondanghoc = Number(prompt("Nhap so mon dang hoc"));
+for (let index = 0; index < somondanghoc; index++) {
+    diemso = Number(prompt("Nhap diem so mon hoc"));
+    diemtong += diemso;
+    
+     
+    
+    
+}diemtrungbinh = diemtong/somondanghoc;
+console.log(diemtrungbinh);
+if (diemtrungbinh>=6) {
+    console.log(`Du diem ra truong`);
+    
+}else if (diemtrungbinh<6) {
+    console.log(`Chua du diem ra truong`);
+    
+}else{
+    console.log(`Nhap lai`);
+    
+}
+
+sinhvien.totnghiep = diemtrungbinh;
+if (diemtrungbinh>=6) {
+    delete sinhvien.monhoc;
+    delete sinhvien.lop;
+    console.log(sinhvien);
+    
+}else{
+    console.log(`Chua tot nghiep`);
+    
+}
