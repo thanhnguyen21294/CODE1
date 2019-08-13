@@ -152,16 +152,23 @@
 // giaithua(N);
 
 
-function danhsachsinhvien(M){
-    for (let index = 0; index < danhsachsinhvien.length; index++) {
-        const sinhvien = danhsachsinhvien[index];
+function danhsachsinhvien(dssv){
+    for (let index = 0; index < dssv.length; index++) {
+        const sinhvien = dssv[index];
+        insinhvien(sinhvien);
+        console.log(sinhvien);
         
-        for (const key in sinhvien) {
-            if (sinhvien.hasOwnProperty(key)) {
-                const value = sinhvien[key];
-                console.log(key + ": " + value);
-                
-            }
-        }
+       
     }
 }    
+
+function insinhvien(sinhVien){
+    for (const key in sinhVien) {
+        if (sinhVien.hasOwnProperty(key)) {
+            const value = sinhVien[key];
+            console.log(key + ": " + value);
+            
+        }
+    }
+}
+
