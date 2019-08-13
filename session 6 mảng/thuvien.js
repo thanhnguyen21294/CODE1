@@ -83,7 +83,7 @@ while (true) {
                 
                 if (sttsachcanban>0 && sttsachcanban<=danhsach.length) {
                     let giaban = Number(prompt("Nhap gia ban"));
-                    danhsach[sttsachcanban - 1] = giaban;
+                    // danhsach[sttsachcanban - 1] = giaban;
                     console.log(`Sach ${sttsachcanban} co gia ${giaban.toLocaleString("fi-FI")} vnd`);
                     // console.log(danhsach);
                     
