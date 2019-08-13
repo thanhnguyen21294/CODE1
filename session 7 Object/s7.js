@@ -152,6 +152,7 @@ if (sinhvien.hasOwnProperty(inputkey)) {
 }else{
     alert("Sai thong tin");
 }
+
 let lop = {
     'maSo': prompt("Nhap ma so lop"),
     'tenLop': prompt("Nhap ten lop")
