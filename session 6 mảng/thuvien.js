@@ -58,6 +58,8 @@ while (true) {
                 let sach = danhsach[index];
                 console.log(`${index + 1} + ${sach}`);
             }
+            console.log(danhsach);
+            
             break;    
         
         case 2:
@@ -109,6 +111,7 @@ while (true) {
             }else{
                 alert("Nhap lai");
             }
+            console.log(danhsach);
             break;
         
         case 6:
@@ -120,6 +123,8 @@ while (true) {
             }else {
                 alert("Nhap lai");
             }
+            console.log(danhsach);
+            
             break;
         
         case 7:
