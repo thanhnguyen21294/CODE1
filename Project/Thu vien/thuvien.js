@@ -32,6 +32,7 @@ while (true) {
             if (themsach == 0) {
                 alert("Không có sách để thêm");
             }   else{
+                
                 thuvien.push(themsach);
                 
                 
@@ -81,4 +82,7 @@ while (true) {
 }
 alert("Bạn đã thoát");
 console.log("Bạn đã thoát");
+
+
+
 
