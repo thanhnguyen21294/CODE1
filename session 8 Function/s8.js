@@ -152,23 +152,93 @@
 // giaithua(N);
 
 
-function danhsachsinhvien(dssv){
-    for (let index = 0; index < dssv.length; index++) {
-        const sinhvien = dssv[index];
-        insinhvien(sinhvien);
-        console.log(sinhvien);
+// function danhsachsinhvien(dssv){
+//     for (let index = 0; index < dssv.length; index++) {
+//         const sinhvien = dssv[index];
+//         insinhvien(sinhvien);
+//         console.log(sinhvien);
         
        
-    }
-}    
+//     }
+// }    
 
-function insinhvien(sinhVien){
-    for (const key in sinhVien) {
-        if (sinhVien.hasOwnProperty(key)) {
-            const value = sinhVien[key];
-            console.log(key + ": " + value);
+// function insinhvien(sinhVien){
+//     for (const key in sinhVien) {
+//         if (sinhVien.hasOwnProperty(key)) {
+//             const value = sinhVien[key];
+//             console.log(key + ": " + value);
             
-        }
-    }
-}
+//         }
+//     }
+// }
+
+
+
+
+//function tên(){
+
+// return [kết quả trả về];
+//}
+
+// function tinhtong(a,b){
+//     return a + b;
+// }
+// let tong = tinhtong(3,4);
+// console.log(tong);
+
+
+
+// function kiemtrasonguyento(n){
+// let count = 0;  
+//     for (let index = 1; index <= n; index++){
+//         if (n % index == 0) {
+//             count++;
+//         }
+       
+//     }
+//     if (count > 2) {
+//         return false
+        
+        
+//     }
+//     return true
+// }
+
+
+
+
+// let N = 7;
+// let ketQua = KiemTraSoNguyenTo(N);
+// if (ketQua == true) {
+//     console.log(N + "la so nguyen to");
+    
+// } else{
+//     console.log(N + "khong la so nguyen to");
+    
+// }
+
+
+// let danhsachuocso = [];
+// function kiemtrasonguyento(n){
+//     // let count = 0;
+//     for (let index = 0; index <= n; index++) {
+//         if (n % index == 0) {
+//             danhsachuocso.push(index);
+//             // count++;
+//         }
+        
+//     }
+//         // if (count > 2) {
+//         // return false;
+//     // }
+//     // return true
+
+// }
+// console.log(danhsachuocso);
+
+// kiemtrasonguyento(100);
+
+
+
+
 
