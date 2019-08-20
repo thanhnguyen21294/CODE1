@@ -241,4 +241,113 @@
 
 
 
+// function sum(a=0,b=0){
+//     return a+b;
+    
+// }
+// // console.log(sum());
+
+// var x = 5;
+// var y = 10;
+// sum(x,y);
+// console.log(sum(x,y));
+
+
+
+// function sum(a,b){
+//     if (!a) {
+//         a = 0
+//     }
+//     return a+b;
+// }
+// var b = 20;
+// var a = '';
+// sum (a,b);
+// console.log(sum(a,b));
+
+
+
+// let list_number = [5,4,6,7,0,23];
+// list_number.sort(function(a,b){
+//     return a-b;
+// });
+// console.log(list_number);
+
+
+let list_Book = [
+    {   
+        name: "Sach cu 1",
+        amount: 10,
+        price: 100000,
+    },
+
+    {
+        name: "SAch cu 2",
+        amount: 20,
+        price: 500000,
+    },
+
+    {   
+        name: "saCH cu 3",
+        amount: 100,
+        price: 10000,
+    },
+
+    {   
+        name: "Moi",
+        amount: 5,
+        price: 20000,
+    },
+
+];
+// list_Book.sort(function (a,b){
+//     // return a.amount-b.amount;
+//     return b.amount-a.amount;
+// });
+// console.log(list_Book);
+
+
+
+// function sortAscending(a,b){
+//     return a.amount-b.amount;
+// }
+// list_Book.sort(sortAscending);
+// console.log(list_Book);
+
+
+function aMount(a){
+    return a.amount>=10;
+}
+var A = list_Book.filter(aMount);
+console.log(A);
+
+
+function Price(b){
+    return b.price>=10000 && b.price<=150000;
+}
+var P = list_Book.filter(Price);
+console.log(P);
+
+
+function totalPrice(c){
+    // console.log(e);
+    // console.log(f);
+    // let sum = e.amount*f.price;
+
+    let sum = c.amount*c.price;
+    return sum <=250000;
+}
+var T = list_Book.filter(totalPrice);
+console.log(T);
+
+// totalPrice(list_Book);
+
+
+function searchName(d){
+    let D = d.name.toLowerCase();
+    return D.includes("sach");
+}
+var S = list_Book.filter(searchName);
+console.log(S);
+
 
