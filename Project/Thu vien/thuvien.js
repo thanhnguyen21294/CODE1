@@ -158,14 +158,23 @@ function dSThuVien(){
     capNhatSach(sach2,"Sách 2", 50000, 10);
 }   
 
+dSSach = {
+    ten: "",
+    gia: "",
+    soluong: ""
+};
 
 function inDSSach(dSSach){
+    
+    
+    
     if (typeof(dSSach) == 'undefined') {
         dSSach = danhSach;
     }
     if (dSSach.length == 0) {
         alert("Danh sách rỗng");
-    }else{
+    }
+    else{
         let m = "Danh sách: \n";
         m = 'STT: Book detail';
         for (let index = 0; index < dSSach.length; index++) {
@@ -174,6 +183,7 @@ function inDSSach(dSSach){
         }
         alert(m);
     }
+    
 }
 
 function sachToString(sach){
@@ -188,9 +198,10 @@ for (const key in sach) {
     return s;
 }
 
-function thongKeSachTheoSoLuong(){
-    let danhSachSach = sort
+function thongKeSachTheoSoLuong(a,b){
+    return a.soluong - b.soluong;
 }
+danhSach.sort(thongKeSachTheoSoLuong);
 
 
 
