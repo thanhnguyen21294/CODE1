@@ -25,61 +25,71 @@
 //     document.getElementById("heading").innerHTML = "Noi dung sinh ra tu JS"
 // }
 
-let n = 20;
-const Pi = 3.14;
-let list_Number = [2,20,3,4,5];
-let person = {
-    name: "Pham Van A",
-    age: 20,
-    country: "HN"
-}
+// let n = 20;
+// const Pi = 3.14;
+// let list_Number = [2,20,3,4,5];
+// let person = {
+//     name: "Pham Van A",
+//     age: 20,
+//     country: "HN"
+// }
 
 
-document.getElementById("dataTypeInt").innerHTML = n;
-document.getElementById("dataTypeFloat").innerHTML = Pi;
+// document.getElementById("dataTypeInt").innerHTML = n;
+// document.getElementById("dataTypeFloat").innerHTML = Pi;
 
 
-for (const tag of document.getElementsByClassName("dataTypeArray")) {
+// for (const tag of document.getElementsByClassName("dataTypeArray")) {
     
     
-    tag.innerHTML = getArrayString(list_Number);
-}
+//     tag.innerHTML = getArrayString(list_Number);
+// }
 
-function getArrayString(array){
-    let result = '<ul>';
-    for (const value of array) {
-        console.log(value);
+// function getArrayString(array){
+//     let result = '<ul>';
+//     for (const value of array) {
+//         console.log(value);
         
         
-            result += '<li>' + value + '</li>';
+//             result += '<li>' + value + '</li>';
            
         
-    }
-    result += '</ul>';
-    return result;
-}
+//     }
+//     result += '</ul>';
+//     return result;
+// }
 
 
 
-for (const obj of document.getElementsByClassName("dataTypeObject")) {
+// for (const obj of document.getElementsByClassName("dataTypeObject")) {
     
     
     
-    obj.innerHTML = getObjectString(person);
-}
+//     obj.innerHTML = getObjectString(person);
+// }
 
-function getObjectString(object){
-    let s = '';
-    for (const key in object) {
+// function getObjectString(object){
+//     let s = '';
+//     for (const key in object) {
             
             
             
-            const value = object[key];
-            s += value + ", ";
+//             const value = object[key];
+//             s += value + ", ";
         
         
         
-    }
-    return s;
+//     }
+//     return s;
     
+// }
+
+
+function submit(){
+    let name = document.getElementById("inputname").value;
+    let age = document.getElementById("inputage").value;
+
+    document.getElementById("welcome").innerHTML = `${name}  ${age} tuoi`;
+    
+
 }
