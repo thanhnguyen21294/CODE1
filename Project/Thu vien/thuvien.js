@@ -96,10 +96,11 @@ let N = "Menu: \n"+
         "6.Thống kê sách theo số lượng: \n"+
         "7.Sắp xếp sách theo số lượng, đơn giá, tổng giá trị: \n"+
         "8.Thoát \n";
-let message = Number(prompt(N));
+
 let danhSach = [];
 dSThuVien();
 while (true) {
+    let message = Number(prompt(N));
     let exit = false;
     switch (message) {
     
@@ -130,11 +131,11 @@ while (true) {
         exit = true
         break;
     default:
-        
+        alert("Nhập sai , yêu cầu nhập lại");
 }
-if (exit) {
+    if (exit) {
     break;
-}
+    }
 }
 
 function sachMacDinh(){
@@ -156,12 +157,13 @@ function dSThuVien(){
     capNhatSach(sach1,"Sách 1", 10000, 20);
     let sach2 = sachMacDinh();
     capNhatSach(sach2,"Sách 2", 50000, 10);
+    danhSach.push(sach1,sach2);
 }   
 
 dSSach = {
-    ten: "",
-    gia: "",
-    soluong: ""
+    'ten': "",
+    'gia': "",
+    'soluong': ""
 };
 
 function inDSSach(dSSach){
@@ -176,10 +178,10 @@ function inDSSach(dSSach){
     }
     else{
         let m = "Danh sách: \n";
-        m = 'STT: Book detail';
+        m = 'STT: Thông tin sách';
         for (let index = 0; index < dSSach.length; index++) {
             const sach = dSSach[index];
-            m += '\n' + `${index+1}` + sachToString(sach);
+            m += '\n' + `${index+1}: ` + sachToString(sach);
         }
         alert(m);
     }
@@ -190,7 +192,7 @@ function sachToString(sach){
 let s = '';
 for (const key in sach) {
     const value = sach[key];
-    s += key + ':' + value + ',';
+    s += key + ': ' + value + ', ';
     }
     if (s.length > 0) {
         s = s.substring(0, s.length - 2);
@@ -203,10 +205,24 @@ function thongKeSachTheoSoLuong(a,b){
 }
 danhSach.sort(thongKeSachTheoSoLuong);
 
+function themSachMoi(){
+    let tenSachMoi = prompt("Nhập tên sách mới");
+    let soLuongSachMoi = Number(prompt("Nhập số lượng"));
+    for (let index = 0; index < danhSach.length; index++) {
+        const sach = danhSach[index];
+        if (tenSachMoi.toLowerCase() == dSSach.ten.toLowerCase()) {
+            sach.soluong += soLuongSachMoi;
+            return;
+        }
+    }
+    let giaSachMoi = Number(prompt("Nhập giá tiền"));
+    let sachMoi = sachMacDinh();
+    capNhatSach(sachMoi,tenSachMoi,giaSachMoi,soLuongSachMoi);
+    danhSach.push(sachMoi);
+}
 
 
-
-console.log("Bạn đã thoát");
+alert("Bạn đã thoát");
 
 
 
