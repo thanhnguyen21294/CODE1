@@ -212,7 +212,7 @@ function themSachMoi(){
         const sach = danhSach[index];
         if (tenSachMoi.toLowerCase() == dSSach.ten.toLowerCase()) {
             sach.soluong += soLuongSachMoi;
-            return;
+            // return;
         }
     }
     let giaSachMoi = Number(prompt("Nhập giá tiền"));
