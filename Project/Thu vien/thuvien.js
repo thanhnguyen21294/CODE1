@@ -160,11 +160,11 @@ function dSThuVien(){
     danhSach.push(sach1,sach2);
 }   
 
-dSSach = {
-    'ten': "",
-    'gia': "",
-    'soluong': ""
-};
+// dSSach = {
+//     'ten': "",
+//     'gia': "",
+//     'soluong': ""
+// };
 
 function inDSSach(dSSach){
     
@@ -200,17 +200,24 @@ for (const key in sach) {
     return s;
 }
 
-function thongKeSachTheoSoLuong(a,b){
+function thongKeSachTheoSoLuong(){
+    function thongKe(a,b){
     return a.soluong - b.soluong;
+    }
+    danhSach.sort(thongKe);
+    // let sapXep = JSON.parse(JSON.stringify(danhSach.sort(thongKe)));
+    // alert(sapXep); 
 }
-danhSach.sort(thongKeSachTheoSoLuong);
+
 
 function themSachMoi(){
     let tenSachMoi = prompt("Nhập tên sách mới");
     let soLuongSachMoi = Number(prompt("Nhập số lượng"));
     for (let index = 0; index < danhSach.length; index++) {
         const sach = danhSach[index];
-        if (tenSachMoi.toLowerCase() == dSSach.ten.toLowerCase()) {
+        // console.log(sach);
+        
+        if (tenSachMoi.toUpperCase() == sach.ten.toUpperCase()) {
             sach.soluong += soLuongSachMoi;
             // return;
         }
@@ -225,6 +232,52 @@ function themSachMoi(){
 alert("Bạn đã thoát");
 
 
+function capNhatTTSach(){
+    inDSSach();
+    let nhapSTTSachCanThayDoi = Number(prompt("Nhập số thứ tự sách cần thay đổi"));
+    if (nhapSTTSachCanThayDoi>0 && nhapSTTSachCanThayDoi<=danhSach.length) {
+        
+        let giaThayDoi = Number(prompt("Nhập giá sách cần thay đổi"));
+        let soLuongThayDoi = Number(prompt("Nhập số lượng sách cần thay đổi"));
+        tenSachThayDoi = danhSach[nhapSTTSachCanThayDoi-1];
+        capNhatSach(tenSachThayDoi,tenSachThayDoi.ten,giaThayDoi,soLuongThayDoi);
+        alert("Cập nhật thành công");
+        inDSSach();
+
+    } else{
+        alert("Nhập lại");
+    }
+}
+
+
+function xoaSach(){
+    inDSSach();
+    let nhapSTTSachCanXoa = Number(prompt("Nhập số thứ tự sách cần xóa"));
+    if (nhapSTTSachCanXoa>0 && nhapSTTSachCanXoa<=danhSach.length) {
+        danhSach.splice(nhapSTTSachCanXoa-1,1);
+        alert("Xóa thành công");
+        inDSSach();
+    }else{
+        alert("Nhập lại");
+    }
+}
 
 
 
+function muonSach(){
+    inDSSach();
+    let nhapSTTSachMuon = Number(prompt("Nhập số thứ tự sách muốn mượn"));
+    if (nhapSTTSachMuon>0 && nhapSTTSachMuon<=danhSach.length) {
+        sttSachMuon = danhSach[nhapSTTSachMuon - 1];
+        let nhapSoLuongMuon = Number(prompt("Nhập số lượng muốn mượn"));
+        if (nhapSTTSachMuon<1 && nhapSTTSachMuon>sttSachMuon.soluong) {
+            alert("Sai số lượng, nhập lại");
+        }else{
+            let soLuongSachConLai = sttSachMuon.soluong - nhapSoLuongMuon;
+            sttSachMuon.soluong = soLuongSachConLai;
+            inDSSach();
+        }
+    }else{
+        alert("Nhập lại");
+    }
+}
