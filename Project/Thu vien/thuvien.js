@@ -205,8 +205,8 @@ function thongKeSachTheoSoLuong(){
     return a.soluong - b.soluong;
     }
     danhSach.sort(thongKe);
-    // let sapXep = JSON.parse(JSON.stringify(danhSach.sort(thongKe)));
-    // alert(sapXep); 
+    let sapXep = JSON.parse(JSON.stringify(danhSach.sort(thongKe)));
+    alert(sapXep); 
 }
 
 
