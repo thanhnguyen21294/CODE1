@@ -4,30 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+    <style>
+            table, td, tr, th {
+              border: 1px solid black;
+            }
+    </style>
     <title>C4EJS</title>
 </head>
 <body>
-    remove element <br/>
-    append
+    
     
     <h2>To do list:  </h2>
-    <h4>Add Job: <input id="inputJob"/> <button onclick="addJob()">Add</button> </h4> 
+    <h4>Add Job: <input id="inputJob"/> <button onclick="addJob()"> Add </button></h4> 
     
-    <table>
+    <table id="tableList">
+        
         <tr>
-            <th id="list">List</th>
-            <th id="job">Job</th>
-            <th id="condition">Condition</th>
+            <th>List</th>
+            <th>Job</th>
+            <th>Remove</th>
         </tr>
-        <tr>
-            <td id="activeList">1</td>
-            <td id="activeJob">JavaScript</td>
-            <td><button>Undone</button></td>
-        </tr>
+        
+        
     </table>
     
-    
+
     
     <script src="table.js"></script>
 </body>
