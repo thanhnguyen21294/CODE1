@@ -22,3 +22,94 @@ function removeRow(r){
     document.getElementById("tableList").deleteRow(i);
     count--;
 }
+
+var userNamePool = [];
+var passWordPool = [];
+function submitReg(){
+    if (document.getElementById("userReg").value.length == 0 || document.getElementById("passReg").value.length == 0) {
+        alert("Try again!");
+    
+   
+}   else{
+    userNamePool.push(document.getElementById("userReg").value);
+    passWordPool.push(document.getElementById("passReg").value);
+    alert("Registered success!")
+    }
+}
+// console.log(userNamePool);
+// console.log(passWordPool);
+
+
+
+function userEnterReg(){
+    if (event.key == "Enter") {
+        
+    
+    if (document.getElementById("userReg").value.length == 0) {
+        alert("Username register required!");
+    } else if (document.getElementById("passReg").value.length == 0) {
+        alert("Password register required!");
+    } else{
+        userNamePool.push(document.getElementById("userReg").value);
+        passWordPool.push(document.getElementById("passReg").value);
+        alert("Registered success!")
+        }
+    }
+}
+
+function passEnterReg(){
+    if (event.key == "Enter") {
+        
+    
+    if (document.getElementById("userReg").value.length == 0) {
+        alert("Username register required!");
+    } else if (document.getElementById("passReg").value.length == 0) {
+        alert("Password register required!");
+    } else{
+        userNamePool.push(document.getElementById("userReg").value);
+        passWordPool.push(document.getElementById("passReg").value);
+        alert("Registered success!")
+        }
+    }
+}
+
+
+
+function submitLog(){
+    let userName = document.getElementById("userLog").value;
+    let passWord = document.getElementById("passLog").value;
+    if (userNamePool.includes(userName) && passWordPool.includes(passWord)) {
+        alert("Login success!");
+    }else{
+        alert("Username or password not match. Try again!");
+    }
+}
+
+
+function userEnterLog(){
+    
+       
+    let userName = document.getElementById("userLog").value;
+    let passWord = document.getElementById("passLog").value;
+    if (event.key == "Enter") {
+        if (userNamePool.includes(userName) && passWordPool.includes(passWord)) {
+            alert("Login success!");
+        }else{
+            alert("Username or password not match. Try again!");
+        }
+    }
+}
+
+function passEnterLog(){
+    
+    
+    let userName = document.getElementById("userLog").value;
+    let passWord = document.getElementById("passLog").value;
+    if (event.key == "Enter") {
+        if (userNamePool.includes(userName) && passWordPool.includes(passWord)) {
+            alert("Login success!");
+        }else{
+            alert("Username or password not match. Try again!");
+        }
+    }
+}
