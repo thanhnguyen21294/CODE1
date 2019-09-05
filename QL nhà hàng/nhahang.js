@@ -87,16 +87,12 @@ function addFood(){
         
         
     }
-
-    
     for (let index = 0; index < dsMonChinhThemMoi.length; index++) {
-        
     let N = dsMonChinhThemMoi.shift();
     dsMonChinhJSON.push(N);
     console.log(dsMonChinhJSON);
+        }
     }
-}
-
 }
 
 
