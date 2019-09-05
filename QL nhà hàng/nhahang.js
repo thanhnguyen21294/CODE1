@@ -24,13 +24,13 @@ let monChinh3 = {
 
 
 
-dsMonChinh.push(monChinh1,monChinh2,monChinh3);
+dsMonChinh.push(monChinh1, monChinh2, monChinh3);
 let dsMonChinhJSON = JSON.parse(JSON.stringify(dsMonChinh));
 console.log(dsMonChinhJSON);
 
 for (let index = 0; index < dsMonChinh.length; index++) {
     let table = document.getElementById("tableRestaurantMainFood");
-    let row = table.insertRow(index + 1); 
+    let row = table.insertRow(index + 1);
     let cell1 = row.insertCell(0);
     let cell2 = row.insertCell(1);
     let cell3 = row.insertCell(2);
@@ -39,10 +39,10 @@ for (let index = 0; index < dsMonChinh.length; index++) {
     cell2.innerHTML = dsMonChinh[index].soluong;
     cell3.innerHTML = dsMonChinh[index].dongia;
     cell4.innerHTML = dsMonChinh[index].tonggia;
-    
+
 }
 
-function thongtinMon(){
+function thongtinMon() {
     return {
         ten: '',
         soluong: 0,
@@ -51,46 +51,46 @@ function thongtinMon(){
     }
 }
 
-function updateFood(food,tenMoi, soluong, dongia){
+function updateFood(food, tenMoi, soluong, dongia) {
     food.ten = tenMoi;
     food.soluong = soluong;
     food.dongia = dongia;
-    food.tonggia = soluong*dongia;
+    food.tonggia = soluong * dongia;
 }
 
-function addFood(){
+function addFood() {
     let A = document.getElementById("newFood").value;
     let B = document.getElementById("newAmount").value;
     let C = document.getElementById("newPrice").value;
-    if ((!A || A.trim().length===0)||(!B || B.trim().length===0)||(!C || C.trim().length===0)) {
+    if ((!A || A.trim().length === 0) || (!B || B.trim().length === 0) || (!C || C.trim().length === 0)) {
         alert("Nhập lại!");
-    } else{
-    let newFood = thongtinMon();
-    let tenmonmoi = document.getElementById("newFood").value ;
-    let soluong = document.getElementById("newAmount").value ;
-    let dongia = document.getElementById("newPrice").value ;
-    updateFood(newFood,tenmonmoi, soluong, dongia);
-    dsMonChinhThemMoi.push(newFood);
-    
-    for (let index = 0; index < dsMonChinhThemMoi.length; index++) {
-        
-        let table = document.getElementById("tableRestaurantMainFood");
-        let row = table.insertRow(index+1+dsMonChinh.length); 
-        let cell1 = row.insertCell(0);
-        let cell2 = row.insertCell(1);
-        let cell3 = row.insertCell(2);
-        let cell4 = row.insertCell(3);
-        cell1.innerHTML = dsMonChinhThemMoi[index].ten;
-        cell2.innerHTML = dsMonChinhThemMoi[index].soluong;
-        cell3.innerHTML = dsMonChinhThemMoi[index].dongia;
-        cell4.innerHTML = dsMonChinhThemMoi[index].tonggia;
-        
-        
-    }
-    for (let index = 0; index < dsMonChinhThemMoi.length; index++) {
-    let N = dsMonChinhThemMoi.shift();
-    dsMonChinhJSON.push(N);
-    console.log(dsMonChinhJSON);
+    } else {
+        let newFood = thongtinMon();
+        let tenmonmoi = document.getElementById("newFood").value;
+        let soluong = document.getElementById("newAmount").value;
+        let dongia = document.getElementById("newPrice").value;
+        updateFood(newFood, tenmonmoi, soluong, dongia);
+        dsMonChinhThemMoi.push(newFood);
+
+        for (let index = 0; index < dsMonChinhThemMoi.length; index++) {
+
+            let table = document.getElementById("tableRestaurantMainFood");
+            let row = table.insertRow(index + 1 + dsMonChinh.length);
+            let cell1 = row.insertCell(0);
+            let cell2 = row.insertCell(1);
+            let cell3 = row.insertCell(2);
+            let cell4 = row.insertCell(3);
+            cell1.innerHTML = dsMonChinhThemMoi[index].ten;
+            cell2.innerHTML = dsMonChinhThemMoi[index].soluong;
+            cell3.innerHTML = dsMonChinhThemMoi[index].dongia;
+            cell4.innerHTML = dsMonChinhThemMoi[index].tonggia;
+
+
+        }
+        for (let index = 0; index < dsMonChinhThemMoi.length; index++) {
+            let N = dsMonChinhThemMoi.shift();
+            dsMonChinhJSON.push(N);
+            console.log(dsMonChinhJSON);
         }
     }
 }
