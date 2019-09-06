@@ -1,5 +1,5 @@
 let dsMonTrangMieng = [];
-let dsMonTrangMiengThemMoi = [];
+// let dsMonTrangMiengThemMoi = [];
 
 let monTrangMieng1 = {
     ten: "Bánh",
@@ -25,30 +25,46 @@ let monTrangMieng3 = {
 
 
 dsMonTrangMieng.push(monTrangMieng1, monTrangMieng2, monTrangMieng3);
-let dsMonTrangMiengJSON = JSON.parse(JSON.stringify(dsMonTrangMieng));
 
-
-for (let index = 0; index < dsMonTrangMieng.length; index++) {
+printMonTrangMieng();
+function printMonTrangMieng() {
     let table = document.getElementById("tableRestaurantDesserts");
-    let row = table.insertRow(index + 1);
+    table.innerHTML = "";
+    let row = table.insertRow(0);
     let cell1 = row.insertCell(0);
     let cell2 = row.insertCell(1);
     let cell3 = row.insertCell(2);
     let cell4 = row.insertCell(3);
     let cell5 = row.insertCell(4);
     let cell6 = row.insertCell(5);
-    cell1.innerHTML = dsMonTrangMieng[index].ten;
-    cell2.innerHTML = dsMonTrangMieng[index].soluong;
-    cell3.innerHTML = dsMonTrangMieng[index].dongia;
-    cell4.innerHTML = dsMonTrangMieng[index].tonggia;
-    cell5.innerHTML = "<button onclick='suaMonChinh()'>Sửa</button>";
-    if (cell2.innerHTML == 0) {
-        cell6.innerHTML = "Hết hàng";
-    } else {
-        cell6.innerHTML = "Còn hàng";
+    cell1.innerHTML = "Tên món";
+    cell2.innerHTML = "Số lượng";
+    cell3.innerHTML = "Đơn giá (vnđ)";
+    cell4.innerHTML = "Tổng giá (vnđ)";
+    cell5.innerHTML = "Thay đổi";
+    cell6.innerHTML = "Tình trạng";
+    for (let index = 0; index < dsMonTrangMieng.length; index++) {
+        let row = table.insertRow(index + 1);
+        let cell1 = row.insertCell(0);
+        let cell2 = row.insertCell(1);
+        let cell3 = row.insertCell(2);
+        let cell4 = row.insertCell(3);
+        let cell5 = row.insertCell(4);
+        let cell6 = row.insertCell(5);
+        
+        cell1.innerHTML = dsMonTrangMieng[index].ten;
+        cell2.innerHTML = dsMonTrangMieng[index].soluong;
+        cell3.innerHTML = dsMonTrangMieng[index].dongia;
+        cell4.innerHTML = dsMonTrangMieng[index].tonggia;
+        cell5.innerHTML = "<button onclick='suaMonTrangMieng(" + index + ")'>Sửa</button>";
+        if (cell2.innerHTML == 0) {
+            cell6.innerHTML = "Hết hàng";
+        } else {
+            cell6.innerHTML = "Còn hàng";
+        }
+        
     }
-
-
+    localStorage.setItem("danhSachMonTrangMieng", JSON.stringify(dsMonTrangMieng));
 }
 
 function thongtinMonTrangMieng() {
@@ -79,39 +95,24 @@ function addDesserts() {
         let soluong = document.getElementById("newDessertsAmount").value;
         let dongia = document.getElementById("newDessertsPrice").value;
         updateDesserts(newDesserts, tenmonmoi, soluong, dongia);
-        dsMonTrangMiengThemMoi.push(newDesserts);
-
-        for (let index = 0; index < dsMonTrangMiengThemMoi.length; index++) {
-
-            let table = document.getElementById("tableRestaurantDesserts");
-            let row = table.insertRow(index + 1 + dsMonTrangMieng.length);
-            let cell1 = row.insertCell(0);
-            let cell2 = row.insertCell(1);
-            let cell3 = row.insertCell(2);
-            let cell4 = row.insertCell(3);
-            let cell5 = row.insertCell(4);
-            let cell6 = row.insertCell(5);
-            cell1.innerHTML = dsMonTrangMiengThemMoi[index].ten;
-            cell2.innerHTML = dsMonTrangMiengThemMoi[index].soluong;
-            cell3.innerHTML = dsMonTrangMiengThemMoi[index].dongia;
-            cell4.innerHTML = dsMonTrangMiengThemMoi[index].tonggia;
-            cell5.innerHTML = "<button>Sửa</button>";
-            if (cell2.innerHTML == 0) {
-                cell6.innerHTML = "Hết hàng";
-            } else {
-                cell6.innerHTML = "Còn hàng";
-            }
-
-        }
-        for (let index = 0; index < dsMonTrangMiengThemMoi.length; index++) {
-            let N = dsMonTrangMiengThemMoi.shift();
-            dsMonTrangMiengJSON.push(N);
-            console.log(dsMonTrangMiengJSON);
-        }
+        dsMonTrangMieng.push(newDesserts);
+        printMonTrangMieng();
+        
     }
 }
 
+function suaMonTrangMieng(index) {
+    index = Number(index);
+    let suaTen = prompt("Nhập lại tên món ăn");
+    let suaSoLuong = Number(prompt("Nhập số lượng cho món ăn"));
+    let suaDonGia = Number(prompt("Nhập đơn giá cho món ăn"));
+    dsMonTrangMieng[index].ten = suaTen;
+    dsMonTrangMieng[index].soluong = suaSoLuong;
+    dsMonTrangMieng[index].dongia = suaDonGia;
+    dsMonTrangMieng[index].tonggia = suaDonGia * suaSoLuong;
+    printMonTrangMieng();
 
+}
 
 
 

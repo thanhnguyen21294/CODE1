@@ -1,5 +1,5 @@
 let dsMonChinh = [];
-let dsMonChinhThemMoi = [];
+// let dsMonChinhThemMoi = [];
 
 let monChinh1 = {
     ten: "Cơm",
@@ -25,30 +25,48 @@ let monChinh3 = {
 
 
 dsMonChinh.push(monChinh1, monChinh2, monChinh3);
-let dsMonChinhJSON = JSON.parse(JSON.stringify(dsMonChinh));
 
-
-for (let index = 0; index < dsMonChinh.length; index++) {
+printMonAn();
+function printMonAn() {
     let table = document.getElementById("tableRestaurantMainFood");
-    let row = table.insertRow(index + 1);
+    table.innerHTML = "";
+    let row = table.insertRow(0);
     let cell1 = row.insertCell(0);
     let cell2 = row.insertCell(1);
     let cell3 = row.insertCell(2);
     let cell4 = row.insertCell(3);
     let cell5 = row.insertCell(4);
     let cell6 = row.insertCell(5);
-    cell1.innerHTML = dsMonChinh[index].ten;
-    cell2.innerHTML = dsMonChinh[index].soluong;
-    cell3.innerHTML = dsMonChinh[index].dongia;
-    cell4.innerHTML = dsMonChinh[index].tonggia;
-    cell5.innerHTML = "<button onclick='suaMonChinh()'>Sửa</button>";
-    if (cell2.innerHTML == 0) {
-        cell6.innerHTML = "Hết hàng";
-    } else {
-        cell6.innerHTML = "Còn hàng";
+    cell1.innerHTML = "Tên món";
+    cell2.innerHTML = "Số lượng";
+    cell3.innerHTML = "Đơn giá (vnđ)";
+    cell4.innerHTML = "Tổng giá (vnđ)";
+    cell5.innerHTML = "Thay đổi";
+    cell6.innerHTML = "Tình trạng";
+    for (let index = 0; index < dsMonChinh.length; index++) {
+        let row = table.insertRow(index + 1);
+        let cell1 = row.insertCell(0);
+        let cell2 = row.insertCell(1);
+        let cell3 = row.insertCell(2);
+        let cell4 = row.insertCell(3);
+        let cell5 = row.insertCell(4);
+        let cell6 = row.insertCell(5);
+        
+        cell1.innerHTML = dsMonChinh[index].ten;
+        cell2.innerHTML = dsMonChinh[index].soluong;
+        cell3.innerHTML = dsMonChinh[index].dongia;
+        cell4.innerHTML = dsMonChinh[index].tonggia;
+        cell5.innerHTML = "<button onclick='suaMonChinh(" + index + ")'>Sửa</button>";
+        if (cell2.innerHTML == 0) {
+            cell6.innerHTML = "Hết hàng";
+        } else {
+            cell6.innerHTML = "Còn hàng";
+        }
+        
     }
-
+    localStorage.setItem("danhSachMonChinh", JSON.stringify(dsMonChinh));
 }
+
 
 function thongtinMon() {
     return {
@@ -80,38 +98,27 @@ function addFood() {
         let soluong = document.getElementById("newAmount").value;
         let dongia = document.getElementById("newPrice").value;
         updateFood(newFood, tenmonmoi, soluong, dongia);
-        dsMonChinhThemMoi.push(newFood);
 
-        for (let index = 0; index < dsMonChinhThemMoi.length; index++) {
 
-            let table = document.getElementById("tableRestaurantMainFood");
-            let row = table.insertRow(index + 1 + dsMonChinh.length);
-            let cell1 = row.insertCell(0);
-            let cell2 = row.insertCell(1);
-            let cell3 = row.insertCell(2);
-            let cell4 = row.insertCell(3);
-            let cell5 = row.insertCell(4);
-            let cell6 = row.insertCell(5);
-            cell1.innerHTML = dsMonChinhThemMoi[index].ten;
-            cell2.innerHTML = dsMonChinhThemMoi[index].soluong;
-            cell3.innerHTML = dsMonChinhThemMoi[index].dongia;
-            cell4.innerHTML = dsMonChinhThemMoi[index].tonggia;
-            cell5.innerHTML = "<button>Sửa</button>";
-            if (cell2.innerHTML == 0) {
-                cell6.innerHTML = "Hết hàng";
-            } else {
-                cell6.innerHTML = "Còn hàng";
-            }
-        }
-        for (let index = 0; index < dsMonChinhThemMoi.length; index++) {
-            let N = dsMonChinhThemMoi.shift();
-            dsMonChinhJSON.push(N);
-            console.log(dsMonChinhJSON);
-        }
+        dsMonChinh.push(newFood);
+
+
+        printMonAn();
     }
 }
 
 
+function suaMonChinh(index) {
+    index = Number(index);
+    let suaTen = prompt("Nhập lại tên món ăn");
+    let suaSoLuong = Number(prompt("Nhập số lượng cho món ăn"));
+    let suaDonGia = Number(prompt("Nhập đơn giá cho món ăn"));
+    dsMonChinh[index].ten = suaTen;
+    dsMonChinh[index].soluong = suaSoLuong;
+    dsMonChinh[index].dongia = suaDonGia;
+    dsMonChinh[index].tonggia = suaDonGia * suaSoLuong;
+    printMonAn();
 
+}
 
 
